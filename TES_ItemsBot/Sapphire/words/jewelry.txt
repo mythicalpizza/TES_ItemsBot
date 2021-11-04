@@ -1,0 +1,5 @@
+Amulet
+Bracelet
+Circlet
+Necklace
+Ring

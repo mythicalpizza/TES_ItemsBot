@@ -1,0 +1,6 @@
+Alteration
+Conjuration
+Destruction
+Illusion
+Necromancy
+Restoration
