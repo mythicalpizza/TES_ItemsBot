@@ -1,7 +1,7 @@
 {
   "replies": "disabled",
   "logs": "disabled",
-  "objectives": "disabled",
+  "objectives": "enabled",
   "blessings": "enabled",
   "diseases": "disabled",
   "scrolls": "disabled"

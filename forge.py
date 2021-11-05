@@ -13,15 +13,20 @@ def item():
     5: misc
     }
 
+    index = 5
+
     flags = config.getJSON("flags.json")
     if config.isDisabled(flags["blessings"]) != True:
-        varieties[6] = blessing
+        index += 1
+        varieties[index] = blessing
 
     if config.isDisabled(flags["diseases"]) != True:
-        varieties[7] = disease
+        index += 1
+        varieties[index] = disease
 
     if config.isDisabled(flags["objectives"]) != True:
-        varieties[8] = objective
+        index += 1
+        varieties[index] = objective
 
     return varieties[random.randint(0, len(varieties)-1)]()
 
@@ -123,6 +128,15 @@ def disease():
     return "Disease"
 
 def objective():
-    return "Objective"
+    potentials = {
+        0: "Return the " + readText.get_from_file("adjectives") + " " + readText.get_from_file("objects") + " to " + readText.get_from_file("npcs"),
+        1: "Meet " + readText.get_from_file("npcs") + " " + readText.get_from_file("vicinity") + " the " + readText.get_from_file("location"),
+        2: "Bring the " + weapon() + " to " + readText.get_from_file("npcs"),
+        3: "Bring the " + armor() + " to " + readText.get_from_file("npcs"),
+        4: "Bring the " + potion() + " to " + readText.get_from_file("npcs"),
+        5: "Retrieve the " + readText.get_from_file("adjectives") + " " + readText.get_from_file("objects") + " for " + readText.get_from_file("npcs")
+    }
 
-#item()
+    return potentials[random.randint(0, len(potentials)-1)]
+#readText.get_from_file()
+#print(objective())
