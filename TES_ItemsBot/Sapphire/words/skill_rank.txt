@@ -1,5 +1,0 @@
-Apprentice
-Expert
-Journeyman
-Master
-Novice
