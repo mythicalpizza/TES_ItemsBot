@@ -1,0 +1,23 @@
+Akaviri
+Alik'r
+Altmer
+Argonian
+Bosmer
+Breton
+Chimer
+Dark Elf
+Dunmer
+Dwemer
+Falmer
+High Elf
+Imperial
+Khajiit
+Vampire
+Nord
+Orc
+Orsimer
+Redguard
+Snow Elf
+Werebear
+Werewolf
+Wood Elf

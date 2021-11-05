@@ -1,0 +1,17 @@
+Changelog for Sapphire
+
+-Removals:
+  "Anorexia" has been removed from the effects list.
+  "Doom" is no longer listed twice in the word bank for effects.
+  "Suicide" has been removed from the effects list.
+
+-Alterations:
+  "Flourishing" is no longer misspelled in the effects list.
+  "Embezzlement" is no longer misspelled in the effects list.
+
+-Additions:
+  "Screaming" has been added to the list of actions.
+  "Chimer" has been added to the list of races.
+  "Vampire" has been added to the list of races.
+  "Werebear" has been added to the list of races.
+  "Werewolf" has been added to the list of races.
