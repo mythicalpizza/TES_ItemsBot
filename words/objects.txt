@@ -7,3 +7,8 @@ Scalpel
 Quill
 Crown
 Dagger
+Bread
+Bucket
+Ring
+Pants
+Shirt

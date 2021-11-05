@@ -6,13 +6,13 @@ import forge
 #Set the script configuration
 about = config.getJSON('about.json')
 flags = config.getJSON("flags.json")
-
+credentials = config.getJSON("credentials.json")
 
 #Initialize api
-api = twitter.Api(consumer_key='',
-    consumer_secret='',
-    access_token_key='',
-    access_token_secret='')
+api = twitter.Api(consumer_key=credentials["consumer_key"],
+    consumer_secret=credentials["consumer_secret"],
+    access_token_key=credentials["access_token_key"],
+    access_token_secret=credentials["access_token_secret"])
 
 #Posts a tweet
 def tweet(body):
@@ -33,4 +33,5 @@ def timed_test(seconds):
             print("Test completed. " + str(iterations) + " items generated in " + str(seconds) + " second(s).")
             break
 
+tweet(forge.item())
 #timed_test(1)

@@ -15,3 +15,11 @@ Changelog for Sapphire
   "Vampire" has been added to the list of races.
   "Werebear" has been added to the list of races.
   "Werewolf" has been added to the list of races.
+  "Claws" has been added to the list of body parts.
+  "Bread" has been added to the list of objects.
+  "Pants" has been added to the list of objects.
+  "Shirt" has been added to the list of objects.
+  "Ring" has been added to the list of objects.
+  Blessings can now be generated.
+  Curses can now be generated.
+  Misc Quest Objectives can now be generated.
