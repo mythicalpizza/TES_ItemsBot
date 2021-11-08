@@ -3,32 +3,30 @@ import readText
 import config
 
 def item():
-
     varieties = {
-    0: weapon,
-    1: armor,
-    2: shout,
-    3: spell,
-    4: potion,
-    5: misc
+    'weapon': (weapon, 50),
+    'armor': (armor, 50),
+    'shout': (shout, 50),
+    'spell': (spell, 50),
+    'potion': (potion, 50),
+    'misc': (misc, 30),
+    'blessing': (blessing, 30),
+    'disease': (disease, 30),
+    'objective': (objective, 45)
     }
 
-    index = 5
-
     flags = config.getJSON("flags.json")
-    if config.isDisabled(flags["blessings"]) != True:
-        index += 1
-        varieties[index] = blessing
+    if config.isDisabled(flags['blessings']):
+        varieties.pop('blessing')
+    if config.isDisabled(flags['diseases']):
+        varieties.pop('disease')
+    if config.isDisabled(flags['objectives']):
+        varieties.pop('objective')
 
-    if config.isDisabled(flags["diseases"]) != True:
-        index += 1
-        varieties[index] = disease
+    function_list = [f[0] for f in list(varieties.values())]
+    weights_list = [w[1] for w in list(varieties.values())]
 
-    if config.isDisabled(flags["objectives"]) != True:
-        index += 1
-        varieties[index] = objective
-
-    return varieties[random.randint(0, len(varieties)-1)]()
+    return random.choices(function_list, weights_list)[0]()
 
 def ismajor():
     m = ["Major", "Minor"]
@@ -139,4 +137,4 @@ def objective():
 
     return potentials[random.randint(0, len(potentials)-1)]
 #readText.get_from_file()
-#print(objective())
+#print(item())

@@ -6,7 +6,7 @@ import forge
 #Set the script configuration
 about = config.getJSON('about.json')
 flags = config.getJSON("flags.json")
-credentials = config.getJSON("credentials.json")
+credentials = config.getJSON("../credentials.json")
 
 #Initialize api
 api = twitter.Api(consumer_key=credentials["consumer_key"],
