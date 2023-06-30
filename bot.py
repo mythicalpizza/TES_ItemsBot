@@ -1,4 +1,5 @@
-import twitter
+#import twitter
+import tweepy
 import config
 import time
 import forge
@@ -6,17 +7,25 @@ import forge
 #Set the script configuration
 about = config.getJSON('about.json')
 flags = config.getJSON("flags.json")
-credentials = config.getJSON("../../credentials.json")
-
-#Initialize api
-api = twitter.Api(consumer_key=credentials["consumer_key"],
-    consumer_secret=credentials["consumer_secret"],
-    access_token_key=credentials["access_token_key"],
-    access_token_secret=credentials["access_token_secret"])
+twitter_credentials = config.getJSON("credentials/twitter.json")#previously had ../../ as a path prefix. Not sure why. This might be important
 
 #Posts a tweet
 def tweet(body):
     newTweet = api.PostUpdate(body)
+
+#Initializes twitter api and posts, if not disabled
+if not config.isDisabled(flags['twitter']):
+    #Initialize twitter api
+    client = tweepy.Client(consumer_key=twitter_credentials["consumer_key"],
+        consumer_secret=twitter_credentials["consumer_secret"],
+        access_token=twitter_credentials["access_token_key"],
+        access_token_secret=twitter_credentials["access_token_secret"])
+    #Post the tweet
+
+    response = client.create_tweet(text=forge.item())
+
+print(response)
+
 ##############################Debug##################################
 def timed_test(seconds):
     start_time = time.time()
@@ -33,5 +42,5 @@ def timed_test(seconds):
             print("Test completed. " + str(iterations) + " items generated in " + str(seconds) + " second(s).")
             break
 
-tweet(forge.item())
+#tweet(forge.item())
 #timed_test(1)

@@ -1,4 +1,7 @@
 {
+  "twitter": "enabled",
+  "bluesky": "enabled",
+  "tumblr": "disabled",
   "replies": "disabled",
   "logs": "disabled",
   "objectives": "enabled",
