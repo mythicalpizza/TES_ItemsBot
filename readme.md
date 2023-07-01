@@ -6,5 +6,5 @@ What's new in this release?
 Sapphire is written entirely in Python 3, allowing for more flexibility, capability and integration.
 
 Dependencies:
-python-twitter: https://github.com/bear/python-twitter
+Tweepy: https://www.tweepy.org
 python 3.10
