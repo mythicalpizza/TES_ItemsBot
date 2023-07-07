@@ -2,6 +2,7 @@
   "twitter": "enabled",
   "bluesky": "enabled",
   "tumblr": "disabled",
+  "crosspostunique": "disabled",
   "replies": "disabled",
   "logs": "disabled",
   "objectives": "enabled",
