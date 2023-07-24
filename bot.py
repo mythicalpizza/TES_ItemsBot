@@ -12,6 +12,7 @@ import log
 about = config.getJSON('about.json')
 flags = config.getJSON("flags.json")
 
+######################################################################################################
 #Attempt to create log directory. This is important to be first because all further errors should be logged
 if not config.isDisabled(flags["logs"]):
     try:
@@ -30,6 +31,10 @@ else:
     print("Logs disabled.")
 
 ######################################################################################################
+#This item will be referenced later to be posted if the crosspostingconstraint flag is enabled, otherwise it will be overwritten at that time
+newItem = forge.item()
+
+######################################################################################################
 #Initializes twitter api and posts, if not disabled
 if not config.isDisabled(flags['twitter']):
     try:
@@ -43,8 +48,12 @@ if not config.isDisabled(flags['twitter']):
                 access_token=twitter_credentials["access_token_key"],
                 access_token_secret=twitter_credentials["access_token_secret"])
 
+            #Make a unique item to tweet as long as the flag to constrain item for all platforms is enabled
+            if config.isDisabled(flags['crosspostingconstraint']):
+                newItem = forge.item()
+
             #Post the tweet
-            response = client.create_tweet(text=forge.item())
+            response = client.create_tweet(text=newItem)
             print(response)
         except:
             print("Unable to authenticate twitter credentials.")
@@ -65,8 +74,12 @@ if not config.isDisabled(flags['bluesky']):
             client = Client()
             client.login(bsky_credentials["bsky_username"], bsky_credentials["bsky_app_password"])
 
+            #Make a unique item to skeet as long as the flag to constrain item for all platforms is enabled
+            if config.isDisabled(flags['crosspostingconstraint']):
+                newItem = forge.item()
+
             #Post the skeet
-            response = client.send_post(text=forge.item())
+            response = client.send_post(text=newItem)
             print(response)
         except:
             print("Unable to authenticate BlueSky credentials.")
