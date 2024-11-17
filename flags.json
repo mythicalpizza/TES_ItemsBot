@@ -7,5 +7,6 @@
   "objectives": "enabled",
   "blessings": "enabled",
   "diseases": "disabled",
-  "scrolls": "disabled"
+  "scrolls": "disabled",
+  "crosspostingconstraint": "disabled"
 }
