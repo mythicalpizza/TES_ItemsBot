@@ -1,3 +1,4 @@
+Book
 Ring
 Mortar and Pestle
 Necklace
@@ -10,5 +11,6 @@ Dagger
 Bread
 Bucket
 Ring
+Paintbrush
 Pants
 Shirt

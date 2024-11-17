@@ -2,11 +2,11 @@
   "twitter": "enabled",
   "bluesky": "enabled",
   "tumblr": "disabled",
-  "crosspostingconstraint": "disabled",
   "replies": "disabled",
   "logs": "enabled",
   "objectives": "enabled",
   "blessings": "enabled",
   "diseases": "disabled",
-  "scrolls": "disabled"
+  "scrolls": "disabled",
+  "crosspostingconstraint": "disabled"
 }

@@ -1,0 +1,2 @@
+class FatalLoggingException(Exception):
+    pass
