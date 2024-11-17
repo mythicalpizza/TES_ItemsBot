@@ -6,8 +6,6 @@ Blacksmith
 Blades
 Brigand
 Brute
-Child
-Children
 Commoner
 Cook
 Courier
@@ -21,6 +19,7 @@ Emperor
 Empire
 Forsworn
 Furry
+Gamer
 Giant
 Greybeards
 Guard
