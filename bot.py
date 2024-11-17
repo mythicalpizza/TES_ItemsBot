@@ -1,46 +1,44 @@
-#import twitter
-import tweepy
 import config
-import time
 import forge
+from log import FatalLoggingException, FileLogger, NullLogger
+from sites import SocialMediaSitePostingException, SocialMediaSiteCredentialsException, Twitter, BlueSky
+from os import getenv
 
-#Set the script configuration
-about = config.getJSON('about.json')
-flags = config.getJSON("flags.json")
-twitter_credentials = config.getJSON("credentials/twitter.json")#previously had ../../ as a path prefix. Not sure why. This might be important
 
-#Posts a tweet
-def tweet(body):
-    newTweet = api.PostUpdate(body)
+def main():
+    # Get a bunch of env vars for running / testing locally. Default to the hardcoded paths so everything
+    # works the same way in prod
+    about_file = getenv("ABOUT_FILE", "about.json")
+    flags_file = getenv("FLAGS_FILE", "flags.json")
+    twitter_credentials_file = getenv("TWITTER_CREDENTIALS_FILE", "../../credentials/twitter.json")
+    bluesky_credentials_file = getenv("BLUESKY_CREDENTIALS_FILE", "../../credentials/bluesky.json")
+    log_dir = getenv("LOG_DIR", "logs")
+    log_file = getenv("LOG_FILE", "teslog.txt")
 
-#Initializes twitter api and posts, if not disabled
-if not config.isDisabled(flags['twitter']):
-    #Initialize twitter api
-    client = tweepy.Client(consumer_key=twitter_credentials["consumer_key"],
-        consumer_secret=twitter_credentials["consumer_secret"],
-        access_token=twitter_credentials["access_token_key"],
-        access_token_secret=twitter_credentials["access_token_secret"])
-    #Post the tweet
+    flags = config.get_json(flags_file)
 
-    response = client.create_tweet(text=forge.item())
+    if not config.is_disabled(flags["logs"]):
+        try:
+            logger = FileLogger(directory=log_dir, filename=log_file)
+        except FatalLoggingException:
+            logger = NullLogger()
+            logger.create_entry("Could not create log file, using NullLogger")
+    else:
+        logger = NullLogger()
 
-print(response)
+    item = forge.item() if not config.is_disabled(flags['crosspostingconstraint']) else None
 
-##############################Debug##################################
-def timed_test(seconds):
-    start_time = time.time()
-    iterations = 0
+    try:
+        twitter = Twitter(twitter_credentials_file)
+        twitter.items_bot_post(item)
+    except (SocialMediaSiteCredentialsException, SocialMediaSitePostingException) as e:
+        logger.handle_error(e, "Twitter Error")
+    try:
+        bluesky = BlueSky(bluesky_credentials_file)
+        bluesky.items_bot_post(item)
+    except (SocialMediaSiteCredentialsException, SocialMediaSitePostingException) as e:
+        logger.handle_error(e, "BlueSky Error")
 
-    while True:
-        current_time = time.time()
-        elapsed_time = current_time - start_time
 
-        print(forge.item())
-        iterations += 1
-
-        if elapsed_time > seconds:
-            print("Test completed. " + str(iterations) + " items generated in " + str(seconds) + " second(s).")
-            break
-
-#tweet(forge.item())
-#timed_test(1)
+if __name__ == "__main__":
+    main()
