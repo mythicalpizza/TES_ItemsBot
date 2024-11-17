@@ -3,7 +3,7 @@
   "bluesky": "enabled",
   "tumblr": "disabled",
   "replies": "disabled",
-  "logs": "disabled",
+  "logs": "enabled",
   "objectives": "enabled",
   "blessings": "enabled",
   "diseases": "disabled",
