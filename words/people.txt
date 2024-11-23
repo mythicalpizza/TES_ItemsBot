@@ -3,7 +3,7 @@ Assassin
 Bandit
 Battlemage
 Blacksmith
-Blades
+Blade
 Brigand
 Brute
 Commoner
@@ -21,7 +21,7 @@ Forsworn
 Furry
 Gamer
 Giant
-Greybeards
+Greybeard
 Guard
 Guardian
 Hagraven

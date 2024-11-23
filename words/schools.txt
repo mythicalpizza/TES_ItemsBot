@@ -4,3 +4,4 @@ Destruction
 Illusion
 Necromancy
 Restoration
+Mysticism

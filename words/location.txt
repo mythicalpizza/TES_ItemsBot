@@ -1,14 +1,14 @@
-The Thieves Guild
-The Dark Brotherhood Sanctuary
-The College of Winterhold
+the Thieves Guild
+the Dark Brotherhood Sanctuary
+the College of Winterhold
 Oblivion
 Mundus
 Nirn
 Sovngarde
 Castle Bruma
 Kvatch
-The Arcane University
-The Imperial City
+the Arcane University
+the Imperial City
 Anvil
 Bravil
 Bruma
@@ -17,85 +17,27 @@ Chorrol
 Kvatch
 Leyawiin
 Skingrad
-Aleswell
-Blankenmarch
-Bleaker's Way
-Border Watch
-Brindle Home
-Cropsford
 Hackdirt
-Harlun's Watch
-Pell's Gate
 Water's Edge
-Weye
-Applewatch
-Drakelowe
-Gweden Farm
-Harm's Folly
 Lord Drad's Estate
 Lord Rugdumph's Estate
-Odiil Farm
-Shardrock
 Shetcombe Farm
 Weatherleah
 Whitmond Farm
 Cloud Ruler Temple
-Gottlesfont Priory
-Knights of the Thorn Headquarters
-Priory of the Nine
-Temple of the Ancestor Moths
+the Knights of the Thorn Headquarters
+the Priory of the Nine
+the Temple of the Ancestor Moths
 Weynon Priory
-White Stallion Lodge
-Battlehorn Castle
 Deepscorn Hollow
-Dunbarrow Cove
 Frostcrag Spire
-Cadlew Chapel
 Greyland
-Isolated House
-Roland Jenseric's Cabin
-Aerin's Camp
-Atrene Camp
-Bawnwatch Camp
-Black Dog Camp
-Bodean Camp
-Bogwater
-Brotch Camp
-Camp Ales
-Carbo's Camp
-Collarbone Camp
-Crestbridge Camp
-Dagny's Camp
-Fat Ramp Camp
-Fisherman's Rock
-Garnet Camp
-Gnoll's Meeting Camp
-Gro-Bak Camp
-Hidden Camp
+the Isolated House
 Last Chance Camp
-Marsh-Punk Camp
-Mortal Camp
-Nayon Camp
-Ra'sava Camp
-Seran Camp
-Sercen Camp
-Sweetwater Camp
-Troll Candle Camp
-Trossan Camp
-Valley View Camp
-Varus Camp
-Walker Camp
-Wind Range Camp
-Cloud Top
 Dive Rock
-Dragonclaw Rock
-Gnoll Mountain
-Harcane Grove
 Hero Hill
-Mouth of the Panther
 Old Bridge
-Shadeleaf Copse
-The Sentinel
+the Sentinel
 Azura's Shrine
 Boethia's Shrine
 Clavicus Vile's Shrine
@@ -111,67 +53,7 @@ Peryite's Shrine
 Sheogorath's Shrine
 Shrine of Sanguine
 Vaermina's Shrine
-Anga
-Anutwyll
-Arpenia
-Atatar
-Bawn
-Belda
-Beldaburo
-Ceyatatar
-Culotte
-Elenglynn
-Fanacas
-Fanacasecul
-Garlas Agea
-Garlas Malatar
-Hame
-Hrotanda Vale
-Kemen
-Lindai
-Lipsand Tarn
-Mackamentain
-Malada
-Miscarcand
-Morahame
-Moranda
-Nagastani
-Narfinsel
-Nenalata
-Nenyond Twyll
-Ninendava
-Niryastare
-Nonungalo
-Nornal
-Nornalhorst
-The Old Way
-Ondo
-Piukanda
-Rielle
-Sardavar Leed
-Sedor
-Sercen
-Silorn
-Talwinque
-Telepe
-Trumbe
-Vahtacen
-Vanua
-Varondo
-Veyond
-Vilverin
-Vindasel
-Welke
-Wendelbek
-Wendir
-Wenyandawik
-Amelion Tomb
-Arrowshaft Cavern
 Barren Cave
-The Beast's Maw
-Bedrock Break
-Black Rock Caverns
-Bleak Flats Cave
 Bloodcrust Cavern
 Bloodmayne Cave
 Bloodrun Cave
@@ -181,163 +63,33 @@ Breakneck Cave
 Brittlerock Cave
 Broken Promises Cave
 Bruma Caverns
-Capstone Cave
-Charcoal Cave
 Cracked Wood Cave
-Crayfish Cave
-Crypt of the Night Mother
-Dark Fissure
+the Crypt of the Night Mother
+the Dark Fissure
 Darkfathom Cave
 Deepscorn Hollow
-Dunbarrow Cove
-Dzonot Cave
-Echo Cave
-Fallen Rock Cave
-Fatback Cave
-Felgageldt Cave
-Fieldhouse Cave
-Fingerbowl Cave
-Frostfire Glade
-Fyrelight Cave
-Glademist Cave
 Goblin Jim's Cave
 Grayrock Cave
 Greenmead Cave
 Haynote Cave
 Horn Cave
 Howling Cave
-Hrota Cave
-Imperial Sewers N. Exit
-Imperial Sewers SE. Exit
-Imperial Prison Sewer
-Imperial Prison Sewer
-Jakben Imbel's House
-Kindred Cave
-Kingscrest Cavern
-Lake Arrius Caverns
-Leafrot Cave
-Lost Boy Cavern
-Memorial Cave
-Mingo Cave
-Mongrel's Tooth Cave
-Moss Rock Cavern
+the Imperial Sewers
 Muck Valley Cavern
-Newt Cave
-Nisin Cave
-Nonwyll Cavern
-Onyx Caverns
-Outlaw Endre's Cave
-Pothole Caverns
-Quickwater Cave
-Red Ruby Cave
-Redguard Valley Cave
-Redwater Slough
-Reedstand Cave
-Robber's Glen Cave
 Rock Bottom Caverns
-Rockmilk Cave
-Sage Glen Hollow
-Sandstone Cavern
-Serpent Hollow Cave
-Serpent's Trail
-Shadow's Rest Cavern
-Shattered Scales Cave
-Shinbone Cave
-Sideways Cave
-Silver Tooth Cave
-Sinkhole Cave
 Smoke Hole Cave
-Smuggler's Cave
-Swampy Cave
-Temple of the Ancestor Moths
-Tidewater Cave
-Timberscar Hollow
-Toadstool Hollow
-Underpall Cave
-Undertow Cavern
-Unmarked Cave
-Veyond Cave
-Wellspring Cave
-Wenderbek Cave
+the Temple of the Ancestor Moths
+the Unmarked Cave
 Wind Cave
-Yellow Tick Cave
-Arkved's Tower
-Battlehorn Castle
-Crowhaven
-Dasek Moor
-Fathis Aren's Tower
-Fort Alessia
-Fort Ash
-Fort Aurus
-Fort Black Boot
-Fort Blueblood
-Fort Bulwark
-Fort Caractacus
-Fort Carmala
-Fort Cedrian
-Fort Chalman
-Fort Coldcorn
-Fort Cuptor
-Fort Dirich
-Fort Doublecross
-Fort Empire
-Fort Entius
-Fort Facian
-Fort Farragut
-Fort Flecia
-Fort Gold-Throat
-Fort Grief
-Fort Hastrel
-Fort Homestead
-Fort Horunn
-Fort Irony
-Fort Istirus
-Fort Linchal
-Fort Magia
-Fort Naso
-Fort Nikel
-Fort Nomore
-Fort Ontus
-Fort Pale Pass
-Fort Rayles
-Fort Redman
-Fort Redwater
-Fort Roebeck
-Fort Scinia
-Fort Sejanus
-Fort Strand
-Fort Sutch
-Fort Teleman
-Fort Urasek
-Fort Variela
-Fort Virtue
-Fort Vlastarus
-Fort Wariel
-Fort Wooden Hand
 Frostcrag Spire
 Sancre Tor
-Sundercliff Watch
-Abandoned Mine
-Barren Mine
-Belletor's Folly
-Bleak Mine
-Collapsed Mine
-Crumbling Mine
-Cursed Mine
-Derelict Mine
-Deserted Mine
-Desolate Mine
-Doomed Mine
-Echo Mine
-Empty Mine
-Exhausted Mine
-Flooded Mine
-Forsaken Mine
-Gutted Mine
-Haunted Mine
-Infested Mine
-Pillaged Mine
-Plundered Mine
-Rickety Mine
-Shattered Mine
-Squandered Mine
+the Abandoned Mine
+the Barren Mine
+the Bleak Mine
+the Collapsed Mine
+the Cursed Mine
+the Derelict Mine
+the Deserted Mine
+the Desolate Mine
+the Doomed Mine
+the Haunted Mine

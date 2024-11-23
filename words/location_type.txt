@@ -1,0 +1,12 @@
+Camp
+Ayleid Ruin
+Cave
+Fort
+Mine
+Oblivion Gate
+Tavern
+Inn
+Dwemer Ruin
+Burial Ground
+Cemetery
+Chapel

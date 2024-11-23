@@ -1,17 +1,20 @@
 import random
-import read_text
+from typing import Optional
+
 import config
+from text import *
+from text.load_helpers import get_effect_that_is_also_noun
 
 
 def item():
     varieties = {
         'weapon': (weapon, 50),
         'armor': (armor, 50),
-        'shout': (shout, 50),
-        'spell': (spell, 50),
-        'potion': (potion, 50),
+        'shout': (shout, 40),
+        'spell': (spell, 30),
+        'potion': (potion, 30),
         'misc': (misc, 30),
-        'blessings': (blessing, 30),
+        'blessings': (blessing, 20),
         'diseases': (disease, 30),
         'objectives': (objective, 60)
     }
@@ -26,17 +29,13 @@ def item():
     return random.choices(function_list, weights_list)[0]()
 
 
-def ismajor():
-    return random.choice(["Major", "Minor"])
-
-
-def weapon():
-    adjective = read_text.get_from_file("adjectives")
-    weapon = read_text.get_from_file("weapons")
-    weapon_type = read_text.get_from_file("weapon_types")
-    effect = read_text.get_from_file("effects")
-    race = read_text.get_from_file("race")
-    magnitude = ismajor()
+def weapon(standalone: bool = False):
+    adjective = get_adjective()
+    weapon = get_weapon()
+    weapon_type = get_weapon_type()
+    effect = get_effect()
+    race = get_race()
+    magnitude = major_minor()
     choices = [
         f"{adjective} {weapon} of {effect}",
         f"{weapon_type} {weapon} of {effect}",
@@ -45,19 +44,23 @@ def weapon():
         f"{adjective} {race} {weapon} of {effect}",
         f"{adjective} {weapon} of {magnitude} {effect}"
     ]
-    return random.choice(choices)
+    flags = config.get_json("flags.json")
+    if standalone or flags.get("advanced_items", "enabled") == "disabled":
+        return random.choice(choices)
+    return random.choice(choices) + object_suffix()
 
 
-def armor():
-    adjective = read_text.get_from_file("adjectives")
-    armor_type = read_text.get_from_file("armor_types")
-    effect = read_text.get_from_file("effects")
-    race = read_text.get_from_file("race")
-    person = read_text.get_from_file("people")
-    quality = read_text.get_from_file("quality")
-    skill_rank = read_text.get_from_file("skill_rank")
-    armor = read_text.get_from_file("armor_sfw") if skill_rank == "Novice" else read_text.get_from_file("armor")
-    school = read_text.get_from_file("schools")
+def armor(standalone: bool = False):
+    adjective = get_adjective()
+    armor_type = get_armor_type()
+    effect = get_effect()
+    race = get_race()
+    person = get_person()
+    group = generic_npc_group(person)
+    quality = get_quality()
+    skill_rank = get_skill_rank()
+    armor = get_armor(skill_rank)
+    school = get_school()
     choices = [
         f"{adjective} {armor} of {effect}",
         f"{armor_type} {armor} of {effect}",
@@ -72,17 +75,23 @@ def armor():
         f"{adjective} {armor} of {effect}",
         f"{skill_rank} {armor} of {school}",
     ]
-    return random.choice(choices)
+    flags = config.get_json("flags.json")
+    choice = random.choice(choices)
+    if standalone or flags.get("advanced_items", "enabled") == "disabled":
+        return choice
+    if choice.lower().endswith("shoes") and random.randint(1, 100) == 100:
+        return "For Sale: " + choice + " (Never Worn)"
+    return choice + object_suffix()
 
 
 def shout():
     prefix = "Word of Power Learned: "
-    action = read_text.get_from_file("actions")
-    adjective = read_text.get_from_file("adjectives")
-    misc = read_text.get_from_file("misc")
-    effect = read_text.get_from_file("effects")
-    poison_rank = read_text.get_from_file("poisonrank")
-    weapon = read_text.get_from_file("weapons")
+    action = get_action()
+    adjective = get_adjective()
+    misc = get_misc()
+    effect = get_effect()
+    poison_rank = get_poison_rank()
+    weapon = get_weapon()
     choices = [
         f"{action} {adjective} {misc}",
         f"{action} {adjective} {effect}",
@@ -94,13 +103,13 @@ def shout():
 
 def spell():
     prefix = "Spell Tome: "
-    action = read_text.get_from_file("actions")
-    second_action = read_text.get_from_file("actions")
-    person = read_text.get_from_file("people")
-    adjective = read_text.get_from_file("adjectives")
-    misc = read_text.get_from_file("misc")
-    effect = read_text.get_from_file("effects")
-    alter = read_text.get_from_file("alter")
+    action = get_action()
+    second_action = get_action()
+    person = get_person()
+    adjective = get_adjective()
+    misc = get_misc()
+    effect = get_effect()
+    alter = get_alter()
     choices = [
         f"{action} {person}",
         f"{adjective} {action}",
@@ -114,13 +123,13 @@ def spell():
 
 def potion():
     prefix = "Potion of "
-    adjective = read_text.get_from_file("adjectives")
-    effect = read_text.get_from_file("effects")
-    action = read_text.get_from_file("actions")
-    person = read_text.get_from_file("people")
-    misc = read_text.get_from_file("misc")
-    alter = read_text.get_from_file("alter")
-    body_part = read_text.get_from_file("body_parts")
+    adjective = get_adjective()
+    effect = get_effect()
+    action = get_action()
+    person = get_person()
+    misc = get_misc()
+    alter = get_alter()
+    body_part = get_body_part()
     choices = [
         f"{adjective} {effect}",
         f"{action} {effect}",
@@ -133,33 +142,46 @@ def potion():
 
 
 def misc():
-    adjective = read_text.get_from_file("adjectives")
-    misc = read_text.get_from_file("misc")
-    effect = read_text.get_from_file("effects")
-    person = read_text.get_from_file("people")
-    race = read_text.get_from_file("race")
+    adjective = get_adjective()
+    misc = get_misc()
+    effect = get_effect()
+    person = get_person()
+    race = get_race()
+    group = "T" + generic_npc_group(person)[1:]
+    p = random.choice([person, group])
     choices = [
         f"{adjective} {misc} of {effect}",
         f"{adjective} {misc}",
-        f"{person}'s {misc} of {effect}",
-        f"{person}'s {misc}",
+        f"{p}'s {misc} of {effect}",
+        f"{p}'s {misc}",
         f"{adjective} {race}",
     ]
     return random.choice(choices)
 
-def blessing():
-    divine = read_text.get_from_file("divines")
-    daedric_lord = read_text.get_from_file("daedric_lord")
-    effect = read_text.get_from_file("effects")
-    adjective = read_text.get_from_file("adjectives")
-    choices = [
+
+def blessing(only_good: Optional[bool] = None):
+    divine = get_divine()
+    daedric_lord = get_daedric_lord()
+    effect = get_effect()
+    adjective = get_adjective()
+    choices = []
+    good_choices = [
         f"{divine}'s Blessing of {effect}",
-        f"{daedric_lord}'s Curse of {effect}",
-        f"{divine}'s {adjective} Curse",
         f"{divine}'s {adjective} Blessing",
-        f"{daedric_lord}'s {adjective} Curse",
         f"{daedric_lord}'s {adjective} Blessing",
     ]
+    bad_choices = [
+        f"{daedric_lord}'s Curse of {effect}",
+        f"{divine}'s {adjective} Curse",
+        f"{daedric_lord}'s {adjective} Curse",
+    ]
+    if only_good is None:
+        choices += good_choices
+        choices += bad_choices
+    elif only_good:
+        choices += good_choices
+    else:
+        choices += bad_choices
     return random.choice(choices)
 
 
@@ -168,34 +190,40 @@ def disease():
 
 
 def objective():
-    adjective = read_text.get_from_file("adjectives")
-    object = read_text.get_from_file("objects")
-    daedric_lord = read_text.get_from_file("daedric_lord")
-    divine = read_text.get_from_file("divines")
-    npc = read_text.get_from_file("npcs")
-    other_npc = read_text.get_from_file("npcs")
-    vicinity = read_text.get_from_file("vicinity")
-    location = read_text.get_from_file("location")
-    action = read_text.get_from_file("actions")
-    adj_obj = f"{adjective} {object}"
-    retrieve_obj = random.choices([f"{adj_obj}", armor(), weapon()], [10, 20, 20])[0]
-    quest_character = random.choices([npc, daedric_lord, divine], [90, 30, 10])[0]
-    npc_action = read_text.get_from_file("actions_target_npc")
-    obj_action = read_text.get_from_file("actions_target_obj")
-    assist_npc = random.choice(["for", "on behalf of", "with the help of"])
-    assist_obj = random.choice(["using", "with", "wielding", "with the help of"])
-    get_word = random.choice(["Get", "Steal", "Take", "Pick up", "Obtain"])
+    npc = get_person_or_npc()
+    vicinity = get_vicinity()
+    location = get_location()
+    adj_obj = get_adjective_object()
+    retrieve_obj = random.choices([f"{adj_obj}", armor(True), weapon(True)], [10, 20, 20])[0]
+    quest_character = get_quest_character()
+    npc_action = get_action_target_npc()
+    obj_action = get_action_target_obj()
+    body_part = get_body_part().lower()
+    effect = get_effect_that_is_also_noun()
+    if not body_part.endswith("s"):
+        body_part = f"a {body_part}"
+    weapon_or_armor = random.choice([weapon(True), armor(True)])
+    non_group_npc = random.choice(["the " + get_person(), get_npc()])
+    group = generic_npc_group(get_person())
+    #
     choices = [
         f"Return the {retrieve_obj} to {quest_character}",
-        f"Meet {npc} {vicinity} {location} with the {random.choice([weapon(), armor()])}",
-        f"Defeat {npc} {vicinity} {location}{random.choices(['', f' {assist_obj} the {weapon()}'], [70, 30])[0]}",
-        f"{get_word} the {retrieve_obj} from {location} {assist_npc} {quest_character}",
-        f"{get_word} the {retrieve_obj} from {location}",
-        f"{get_word} the {retrieve_obj} from {quest_character}",
-        f"Travel to {location} to {obj_action.lower()} the {random.choice([weapon(), armor()])}",
-        f"Tell {quest_character} about the {random.choice([weapon(), armor()])}",
-        f"Go to {location} to {npc_action.lower()} {quest_character}",
-        f"{npc_action} {quest_character} {assist_obj} the {random.choice([weapon(), armor()])}",
-        f"Find a way to bestow {blessing()} upon {quest_character}"
+        f"Meet {npc} {vicinity} {location} with the {weapon_or_armor}",
+        f"Defeat {npc} {vicinity} {location}{random.choices(['', f' {assist_phrase_object()} the {weapon(True)}'], [70, 30])[0]}",
+        f"{obtain_word()} the {retrieve_obj} from {location} {assist_phrase_npc()} {quest_character}",
+        f"{obtain_word()} the {retrieve_obj} from {location}",
+        f"{obtain_word()} the {retrieve_obj} from {npc}",
+        f"Collect {body_part} from {npc}",
+        f"Travel to {location} to {obj_action.lower()} the {weapon_or_armor}",
+        f"Tell {quest_character} about the {weapon_or_armor}",
+        f"Go to {location} to {npc_action.lower()} {npc}",
+        f"{npc_action} {quest_character} {assist_phrase_object()} the {weapon_or_armor}",
+        f"Find a way to bestow {blessing(True)} upon {npc}",
+        f"Find a way to free {quest_character} from {blessing(False)}",
+        f"Report back to {quest_character} about the {random.choice([npc, weapon_or_armor])}",
+        f"Contain the aftermath of {non_group_npc}'s {effect.lower()}",
+        f"Protect {quest_character} from {non_group_npc}'s {effect.lower()}",
     ]
-    return "New Objective: " + random.choice(choices)
+    quest_prefix = random.choice(
+        ["New Objective: ", "", "Quest Log Updated: ", "Objective Completed: ", "Quest Failed: "])
+    return quest_prefix + random.choice(choices)

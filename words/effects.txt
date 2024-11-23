@@ -4,7 +4,6 @@ Anger
 Annihilation
 Apathy
 Archery
-Assault
 Authority
 Balance
 Bartering
@@ -23,6 +22,7 @@ Comprehending
 Content
 Cooking
 Crapping
+Cringing
 Crushing
 Cure
 Dampening
@@ -104,8 +104,8 @@ Moistening
 Mortality
 Munchies
 Murder
+Napping
 Nimbleness
-Obesity
 Obliteration
 Observation
 Paranoia
@@ -133,6 +133,7 @@ Screams
 Sex
 Skill
 Slaying
+Slickening
 Sleeping
 Slicing
 Slumber

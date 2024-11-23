@@ -1,5 +1,6 @@
 import time
 import forge
+from text import generic_npc_group, get_person
 
 
 def timed_test(seconds):
@@ -22,7 +23,6 @@ def test_all_forge_functions():
     gens = [
         "weapon: " + forge.weapon(),
         "armor: " + forge.armor(),
-        "major: " + forge.ismajor(),
         "misc: " + forge.misc(),
         "armor: " + forge.armor(),
         "spell: " + forge.spell(),
@@ -30,6 +30,7 @@ def test_all_forge_functions():
         "blessing: " + forge.blessing(),
         "disease: " + forge.disease(),
         "potion: " + forge.potion(),
+        "generic_npc_group: " + generic_npc_group(get_person()),
     ]
     for item in gens:
         print(item)
@@ -38,4 +39,5 @@ def test_all_forge_functions():
 if __name__ == "__main__":
     test_all_forge_functions()
     print("======")
-    print(forge.item())
+    for _ in range(1, 200):
+        print(forge.item())

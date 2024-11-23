@@ -8,5 +8,6 @@
   "blessings": "enabled",
   "diseases": "disabled",
   "scrolls": "disabled",
+  "advanced_items": "enabled",
   "crosspostingconstraint": "disabled"
 }
