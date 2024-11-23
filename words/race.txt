@@ -2,13 +2,17 @@ Akaviri
 Alik'r
 Altmer
 Argonian
+Ayleid
 Bosmer
 Breton
 Chimer
 Dark Elf
+Dragon
 Dunmer
 Dwemer
 Falmer
+Giant
+Goblin
 High Elf
 Imperial
 Khajiit
