@@ -1,7 +1,12 @@
 import config
 import forge
 from log import FatalLoggingException, FileLogger, NullLogger
-from sites import SocialMediaSitePostingException, SocialMediaSiteCredentialsException, Twitter, BlueSky
+from sites import (
+    SocialMediaSitePostingException,
+    SocialMediaSiteCredentialsException,
+    Twitter,
+    BlueSky,
+)
 from os import getenv
 
 
@@ -10,8 +15,12 @@ def main():
     # works the same way in prod
     about_file = getenv("ABOUT_FILE", "about.json")
     flags_file = getenv("FLAGS_FILE", "flags.json")
-    twitter_credentials_file = getenv("TWITTER_CREDENTIALS_FILE", "../../credentials/twitter.json")
-    bluesky_credentials_file = getenv("BLUESKY_CREDENTIALS_FILE", "../../credentials/bluesky.json")
+    twitter_credentials_file = getenv(
+        "TWITTER_CREDENTIALS_FILE", "../../credentials/twitter.json"
+    )
+    bluesky_credentials_file = getenv(
+        "BLUESKY_CREDENTIALS_FILE", "../../credentials/bluesky.json"
+    )
     log_dir = getenv("LOG_DIR", "logs")
     log_file = getenv("LOG_FILE", "teslog.txt")
 
@@ -26,7 +35,11 @@ def main():
     else:
         logger = NullLogger()
 
-    item = forge.item() if not config.is_disabled(flags['crosspostingconstraint']) else None
+    item = (
+        forge.item()
+        if not config.is_disabled(flags["crosspostingconstraint"])
+        else None
+    )
 
     try:
         twitter = Twitter(twitter_credentials_file)

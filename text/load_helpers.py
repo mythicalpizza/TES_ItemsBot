@@ -1,117 +1,168 @@
 import random
-from typing import Optional
+from typing import Optional, List
 
-from select import select
+from read_text import get_random_line_from_file, get_all_lines_from_file
+from text.format import pluralize
 
-from read_text import get_from_file, get_lines_from_file
+
+def get_action() -> str:
+    """
+    Get an action
+    """
+    return get_random_line_from_file("actions")
 
 
-def get_action():
-    return get_from_file("actions")
+def get_action_target_npc() -> str:
+    """
+    Get an action that makes sense to perform on a person
+    """
+    lines = get_all_lines_from_file("actions")
+    lines = [
+        l for l in lines if l not in get_all_lines_from_file("actions_exclude_person")
+    ]
+    return random.choice(lines)
 
-def get_action_target_npc():
-    return get_from_file("actions_target_npc")
 
-def get_action_target_obj():
-    return get_from_file("actions_target_obj")
+def get_action_target_obj() -> str:
+    """
+    Get an action that makes sense to perform on an Object
+    """
+    lines = get_all_lines_from_file("actions")
+    lines = [
+        l for l in lines if l not in get_all_lines_from_file("actions_exclude_object")
+    ]
+    return random.choice(lines)
 
-def get_adjective():
-    return get_from_file("adjectives")
 
-def get_alter():
-    return get_from_file("alter")
+def get_adjective() -> str:
+    return get_random_line_from_file("adjectives")
 
-def get_armor(skill_rank: Optional[str] = None):
+
+def get_alter() -> str:
+    return get_random_line_from_file("alter")
+
+
+def get_armor(skill_rank: Optional[str] = None) -> str:
     if skill_rank == "Novice":
-        return get_from_file("armor_sfw")
-    return get_from_file("armor")
+        return random.choice(
+            [
+                f
+                for f in get_all_lines_from_file("armor")
+                if f not in get_all_lines_from_file("armor_restricted")
+            ]
+        )
+    return get_random_line_from_file("armor")
 
-def get_armor_type():
-    return get_from_file("armor_types")
 
-def get_body_part():
-    return get_from_file("body_parts")
+def get_armor_type() -> str:
+    return get_random_line_from_file("armor_types")
 
-def get_daedric_lord():
-    return get_from_file("daedric_lord")
 
-def get_divine():
-    return get_from_file("divines")
+def get_body_part() -> str:
+    return get_random_line_from_file("body_parts")
 
-def get_effect():
-    return get_from_file("effects")
 
-def get_gem():
-    return get_from_file("gem")
+def get_daedric_lord() -> str:
+    return get_random_line_from_file("daedric_lord")
 
-def get_jewelry():
-    return get_from_file("jewelry")
 
-def get_jewelry_type():
-    return get_from_file("jewelry_types")
+def get_divine() -> str:
+    return get_random_line_from_file("divines")
 
-def get_location():
-    return get_from_file("location")
 
-def get_location_type():
-    return get_from_file("location_type")
+def get_effect() -> str:
+    return get_random_line_from_file("effects")
 
-def get_misc():
-    return get_from_file("misc")
 
-def get_npc():
-    return get_from_file("npcs")
+def get_gem() -> str:
+    return get_random_line_from_file("gem")
 
-def get_object():
-    return get_from_file("objects")
 
-def get_person():
-    return get_from_file("people")
+def get_jewelry() -> str:
+    return get_random_line_from_file("jewelry")
 
-def get_poison_rank():
-    return get_from_file("poisonrank")
 
-def get_quality():
-    return get_from_file("quality")
+def get_jewelry_type() -> str:
+    return get_random_line_from_file("jewelry_types")
 
-def get_race():
-    return get_from_file("race")
 
-def get_school():
-    return get_from_file("schools")
+def get_location() -> str:
+    return get_random_line_from_file("location")
 
-def get_skill_rank():
-    return get_from_file("skill_rank")
 
-def get_vicinity():
-    return get_from_file("vicinity")
+def get_location_type() -> str:
+    return get_random_line_from_file("location_type")
 
-def get_weapon_type():
-    return get_from_file("weapon_types")
 
-def get_weapon():
-    return get_from_file("weapons")
+def get_misc() -> str:
+    return get_random_line_from_file("misc")
 
-def get_effect_that_is_also_noun():
-    return random.choice([l for l in get_lines_from_file("effects") if not (l.endswith("ing"))])
 
-def get_person_or_npc():
-    return random.choices(
-        [
-            "the " + get_person(),
-            generic_npc_group(get_person()),
-            get_npc()
-        ], [30, 70, 20]
-    )[0]
+def get_npc() -> str:
+    return get_random_line_from_file("npcs")
 
-def get_location_or_type():
-    return random.choices(
-        [
-        "the " + get_location_type(),
-        get_location()
-            ],
-        [80, 20]
-    )[0]
+
+def get_object() -> str:
+    return get_random_line_from_file("objects")
+
+def get_adverb() -> str:
+    return get_random_line_from_file("adverbs")
+
+def get_person() -> str:
+    return get_random_line_from_file("people")
+
+
+def get_poison_rank() -> str:
+    return get_random_line_from_file("poisonrank")
+
+
+def get_quality() -> str:
+    return get_random_line_from_file("quality")
+
+
+def get_race() -> str:
+    return get_random_line_from_file("race")
+
+
+def get_school() -> str:
+    return get_random_line_from_file("schools")
+
+
+def get_skill_rank() -> str:
+    return get_random_line_from_file("skill_rank")
+
+
+def get_vicinity() -> str:
+    return get_random_line_from_file("vicinity")
+
+
+def get_weapon_type() -> str:
+    return get_random_line_from_file("weapon_types")
+
+
+def get_faction() -> str:
+    return get_random_line_from_file("faction")
+
+
+def get_weapon() -> str:
+    return get_random_line_from_file("weapons")
+
+
+def get_noun_effect() -> str:
+    return random.choice(
+        [l for l in get_all_lines_from_file("effects") if not (l.endswith("ing"))]
+    )
+
+
+def get_ing_effect() -> str:
+    return random.choice(
+        [l for l in get_all_lines_from_file("effects") if l.endswith("ing")]
+    )
+
+
+def get_obtain_word() -> str:
+    return get_random_line_from_file("obtain_words")
+
 
 def get_potential_adjective():
     adjective = get_adjective()
@@ -121,49 +172,19 @@ def get_potential_adjective():
         return f"{get_adjective().lower()} "
     return ""
 
-def generic_npc_group(generic_npc: str, singular: bool = False):
-    race = get_race()
-    if race != "Redguard":
-        # avoid being racist
-        generic_npc = random.choice([generic_npc, race])
-    if random.randint(1, 1000) == 1000:
-        # extremely rare chance that a proper noun is treated as a generic for funny
-        generic_npc = get_npc()
-    if generic_npc.startswith("the "):
-        generic_npc = generic_npc[4:]
-    plural = f"{generic_npc}s"
-    if generic_npc.endswith("y"):
-        plural = f"{generic_npc[:-1]}ies"
-    if any(generic_npc.endswith(x) for x in ["s", "ss", "sh", "ch", "x", "z"]):
-        plural = f"{generic_npc}es"
-    if generic_npc.endswith("f"):
-        plural = f"{generic_npc[:-1]}ves"
-    group_types = ["swarm", "gang", "council", "cult", "congregation", "pack", "team"]
-    group_types_only_suffix = ["crew", "power couple", "duo", "trio", "clique", "club", "cabal", "posse", "polycule", "community"]
-    group_types_only_prefix = ["band"]
-    selections = []
-    if not singular:
-        selections += [
-            f"{t} of {get_potential_adjective()}{plural}" for t in group_types + group_types_only_prefix
-        ]
-    selections += [
-        f"{generic_npc} {t}" for t in group_types + group_types_only_suffix
-    ]
-    if generic_npc.startswith("g"):
-        selections.append(f"gaggle of {plural}")
-    if random.randint(1, 10) >= 9:
-        return "the " + get_adjective().lower() + " " + random.choice(selections)
-    return "the " + random.choice(selections)
 
-def get_quest_character():
-    return random.choices([
-        get_npc(),
-        get_daedric_lord(),
-        get_divine(),
-        generic_npc_group(get_person()),
-        "the " + get_person(),
-    ], [65, 10, 10, 40, 10])[0]
+def get_creature(plural: bool = False):
+    creatures = get_all_lines_from_file("creature")
+    if plural:
+        creatures = [pluralize(c) for c in creatures]
+    return random.choice(creatures)
+
 
 def get_adjective_object():
     return f"{get_adjective()} {get_object()}"
 
+
+def get_magnitude() -> str:
+    choices: List[str] = [f"{i} " for i in get_all_lines_from_file("magnitude")]
+    choices += [""]
+    return random.choice(choices)

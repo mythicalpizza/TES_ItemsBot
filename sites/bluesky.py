@@ -11,13 +11,18 @@ class BlueSky(SocialMediaSite):
     """
     Represents connection to BlueSky API
     """
+
     def __init__(self, creds_file_path: str):
         super().__init__(creds_file_path)
         self.client = Client()
         try:
-            self.client.login(self.creds["bsky_username"], self.creds["bsky_app_password"])
+            self.client.login(
+                self.creds["bsky_username"], self.creds["bsky_app_password"]
+            )
         except UnauthorizedError as e:
-            raise SocialMediaSiteCredentialsException(f"BlueSky credentials invalid: {e}")
+            raise SocialMediaSiteCredentialsException(
+                f"BlueSky credentials invalid: {e}"
+            )
 
     def post(self, content: str):
         try:

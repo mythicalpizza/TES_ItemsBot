@@ -1,0 +1,88 @@
+Acrobat
+Ancient Ghost
+Ancient Lich
+Archer
+Assassin
+Barbarian
+Bard
+Battlemage
+Bear
+Black Bear
+Boar
+Brown Bear
+Burglar
+Centaur
+Clannfear
+Clannfear Runt
+Daedra Lord
+Daedra Seducer
+Daedroth
+Deer
+Dog
+Dragon
+Dread Zombie
+Dreugh
+Faded Wraith
+Fire Atronach
+Fire Daedra
+Flame Atronach
+Flesh Atronach
+Frost Atronach
+Frost Daedra
+Gargoyle
+Ghost
+Giant
+Giant Bat
+Giant Scorpion
+Gloom Wraith
+Goblin
+Grizzly Bear
+Guard
+Harpy
+Headless Zombie
+Healer
+Horse
+Ice Atronach
+Imp
+Iron Atronach
+Knight
+Lamia
+Land Dreugh
+Mage
+Minotaur
+Minotaur Lord
+Monk
+Moth
+Mountain Lion
+Mud Crab
+Nether Lich
+Nightblade
+Nymph
+Ogre
+Ranger
+Rat
+Rogue
+Saber Cat
+Sabertooth Tiger
+Scamp
+Sheep
+Skeletal Warrior
+Skeleton
+Sorcerer
+Spellsword
+Spider
+Spider Daedra
+Spriggan
+Storm Atronach
+Stunted Scamp
+Tiger
+Timber Wolf
+Troll
+Vampire
+Warrior
+Wereboar
+Werewolf
+Will-o-the-Wisp
+Wolf
+Wraith
+Zombie

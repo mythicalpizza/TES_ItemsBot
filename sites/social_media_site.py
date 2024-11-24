@@ -15,12 +15,16 @@ class SocialMediaSite(metaclass=ABCMeta):
     def __init__(self, creds_file_path: str):
         classname = self.__class__.__name__
         try:
-            with open(creds_file_path, 'r') as creds_file:
+            with open(creds_file_path, "r") as creds_file:
                 self.creds = json.load(creds_file)
         except (IOError, JSONDecodeError) as e:
-            raise SocialMediaSiteCredentialsException(f"Could not get credentials for {classname}: {e}")
+            raise SocialMediaSiteCredentialsException(
+                f"Could not get credentials for {classname}: {e}"
+            )
         if any(not self.creds[key] for key in self.creds.keys()):
-            raise SocialMediaSiteCredentialsException(f"At least one item in the credentials file is blank for {classname}")
+            raise SocialMediaSiteCredentialsException(
+                f"At least one item in the credentials file is blank for {classname}"
+            )
 
     @abstractmethod
     def post(self, content: str):
@@ -36,5 +40,3 @@ class SocialMediaSite(metaclass=ABCMeta):
         if item is None:
             item = forge.item()
         return self.post(item)
-
-

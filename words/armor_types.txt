@@ -1,6 +1,9 @@
+Adamantium
 Banded Iron
+Bear
 Boiled Netch Leather
 Bonemold
+Chainmail
 Chitin
 Daedric
 Dawnguard
@@ -11,12 +14,17 @@ Elven
 Falmer
 Forsworn
 Fur
+Glass
 Hide
+Ice
 Imperial
 Iron
+Rough Leather
 Leather
+Mithril
 Netch Leather
 Nordic
+Nordic Mail
 Orcish
 Plate
 Scale

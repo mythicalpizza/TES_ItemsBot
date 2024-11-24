@@ -1,11 +1,15 @@
 Axe
 Battleaxe
-Bow
+War Axe
+Long Bow
+Short Bow
 Club
+Claymore
 Crossbow
 Cutlass
 Dagger
 Dai-Katana
+Dart
 Greatsword
 Halberd
 Katana
@@ -17,9 +21,17 @@ Pitchfork
 Plank
 Scimitar
 Shortsword
+Throwing Stars
+Knife
 Shovel
 Staff
-Sword
+Spear
+Shortsword
+Longsword
+Broadsword
+Saber
+Tanto
 Waraxe
 Warhammer
 Whip
+Flail
