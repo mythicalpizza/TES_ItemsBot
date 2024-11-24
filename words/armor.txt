@@ -39,3 +39,38 @@ Graphic T-Shirt
 Blazer
 Sports Jersey
 Flip-Flops
+Jorts
+Jumper
+Waders
+Clogs
+Long Johns
+Trenchcoat
+Leggings
+Hat
+Sneakers
+Pauldrons
+Bracers
+Buckler
+Gloves
+Fingerless Gloves
+Tank-Top
+Cloak
+Robe
+Tunic
+Hood
+Belt
+Choker
+Socks
+Vest
+Cardigan
+Jeggings
+Cap
+Bloomers
+Highwaters
+Sweatpants
+Stockings
+Scarf
+Polo Shirt
+Collar
+Raiment
+Aegis

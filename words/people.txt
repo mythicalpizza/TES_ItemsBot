@@ -1,3 +1,4 @@
+Acrobat
 Apothecary
 Assassin
 Bandit
@@ -10,7 +11,7 @@ Commoner
 Cook
 Courier
 Coward
-Dark Brotherhood
+Dark Brotherhood Assassin
 Deceiver
 Defender
 Dragonborn
@@ -21,6 +22,7 @@ Forsworn
 Furry
 Gamer
 Giant
+Gooner
 Greybeard
 Guard
 Guardian
@@ -32,8 +34,10 @@ Husband
 Idiot
 Imperial
 Initiate
+Innkeeper
 Jarl
 Knight
+Landlord
 Leviathan
 Loser
 Lover
@@ -80,6 +84,8 @@ Vampire
 Warrior
 Weeaboo
 Werewolf
+Werebear
+Wereshark
 Wife
 Witch
 Wizard

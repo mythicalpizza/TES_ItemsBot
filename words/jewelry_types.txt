@@ -3,3 +3,5 @@ Bronze
 Copper
 Gold
 Silver
+Platinum
+Pewter

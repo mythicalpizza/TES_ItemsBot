@@ -8,5 +8,3 @@ class BaseLogger(metaclass=ABCMeta):
 
     def handle_error(self, error: Exception, message: str = "Error"):
         self.create_entry(f"{message}: {error}".replace("\n", ": "))
-
-

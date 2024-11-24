@@ -6,7 +6,7 @@ def get_json(file) -> Union[Dict, List]:
     """
     Read from JSON file on disk
     """
-    with open(file, 'r') as infile:
+    with open(file, "r") as infile:
         data = json.load(infile)
     return data
 

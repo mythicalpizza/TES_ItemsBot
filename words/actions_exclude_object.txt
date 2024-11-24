@@ -1,0 +1,27 @@
+# actions that don't make sense to perform on an object / are uninteresting for that purpose
+Affect
+Arrest
+Assist
+Beseech
+Change
+Close
+Deceive
+Draw
+Dread
+Endure
+Fast
+Fear
+Hate
+Jump
+Leech
+Love
+Lower
+Mesmerize
+Possess
+Raise
+Reduce
+Screaming
+Slow
+Submit
+Tempt
+Withstand
