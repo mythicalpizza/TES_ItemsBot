@@ -1,5 +1,6 @@
 Axe
 Battleaxe
+Broadsword
 War Axe
 Long Bow
 Short Bow
@@ -10,6 +11,7 @@ Cutlass
 Dagger
 Dai-Katana
 Dart
+Flail
 Greatsword
 Halberd
 Katana
@@ -28,10 +30,8 @@ Staff
 Spear
 Shortsword
 Longsword
-Broadsword
 Saber
 Tanto
 Waraxe
 Warhammer
 Whip
-Flail

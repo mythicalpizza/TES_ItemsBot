@@ -1,5 +1,7 @@
 Apprentice
+Beginner
 Expert
+Grandmaster
 Journeyman
 Master
 Novice

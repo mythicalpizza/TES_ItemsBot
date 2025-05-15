@@ -12,3 +12,6 @@ Procure
 Seize
 Accept
 Capture
+Gather
+Pilfur
+Claim

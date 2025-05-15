@@ -1,5 +1,8 @@
 Acrobat
+Author
 Apothecary
+Aristocrat
+Artist
 Assassin
 Bandit
 Battlemage
@@ -7,9 +10,12 @@ Blacksmith
 Blade
 Brigand
 Brute
+Brony
 Commoner
 Cook
+Count
 Courier
+Courtesan
 Coward
 Dark Brotherhood Assassin
 Deceiver
@@ -27,7 +33,6 @@ Greybeard
 Guard
 Guardian
 Hagraven
-High King
 High King
 Highwayman
 Husband
@@ -60,7 +65,8 @@ Priestess
 Prophet
 Renegade
 Scholar
-Sellsword
+Simp
+Sigma
 Sellsword
 Servant
 Snake

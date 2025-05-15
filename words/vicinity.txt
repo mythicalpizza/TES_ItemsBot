@@ -7,3 +7,5 @@ below
 near
 under
 in front of
+somewhere around
+within

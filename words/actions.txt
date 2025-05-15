@@ -67,6 +67,7 @@ Pummel
 Push
 Raise
 Reduce
+Regulate
 Repair
 Restore
 Rinse

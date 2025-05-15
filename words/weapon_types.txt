@@ -3,6 +3,7 @@ Bonemold
 Chitin
 Daedric
 Dawnguard
+Dogshit
 Dragonbone
 Dwarven
 Ebony
@@ -21,5 +22,6 @@ Skyforge Steel
 Spectral
 Stalhrim
 Steel
+Titanium
 Wood
 Wooden

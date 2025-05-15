@@ -1,7 +1,16 @@
+Adamantium
+Aluminum
 Brass
 Bronze
+Clay
 Copper
 Gold
+Iron
+Mithril
 Silver
+Steel
 Platinum
 Pewter
+Tin
+Titanium
+Vibranium
