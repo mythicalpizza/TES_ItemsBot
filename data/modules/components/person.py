@@ -1,7 +1,7 @@
-from components.enums.faction import Faction
-from components.enums.race import Race
-from components.enums.skillgroup import SkillGroup
-from components.enums.homecity import HomeCity
+from modules.components.enums.faction import Faction
+from modules.components.enums.race import Race
+from modules.components.enums.skillgroup import SkillGroup
+from modules.components.enums.homecity import HomeCity
 
 class Person():
     def __init__(self, name, race, faction, skillgroup = SkillGroup.COMBAT, homecity = HomeCity.RANDOM):
