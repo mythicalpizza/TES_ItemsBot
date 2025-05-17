@@ -20,10 +20,12 @@ class HomeCity(Enum):
     CHEYDINHAL = 17
     CHORROL = 18
     KVATCH = 19
-    LEYAWINN = 20
+    LEYAWIIN = 20
     SKINGRAD = 21
     NEWSHEOTH = 22
-    ALDRUHN = 23
-    BALMORA = 24
-    SADRITHMORA = 25
-    VIVEC = 26
+    BLISS = 23
+    CRUCIBLE = 24
+    ALDRUHN = 25
+    BALMORA = 26
+    SADRITHMORA = 27
+    VIVEC = 28
